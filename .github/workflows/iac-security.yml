@@ -51,14 +51,16 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -input=false
+        working-directory: ./10-create-vm
 
       - name: Terraform Plan (json)
         run: terraform plan -out=tfplan.bin && terraform show -json tfplan.bin > tfplan.json
+        working-directory: ./10-create-vm
 
       - name: Run Checkov on plan
         uses: bridgecrewio/checkov-action@v12
         with:
-          directory: .
+          directory: ./10-create-vm
           file: tfplan.json
           framework: terraform_plan
           soft_fail: false
