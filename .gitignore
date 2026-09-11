@@ -11,3 +11,5 @@
 .terraform/
 *.tfstate
 *.tfstate.*
+tfplan.json
+tfplan.bin
