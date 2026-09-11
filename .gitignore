@@ -1,0 +1,13 @@
+# NOTE: Ensure a .gitignore file excludes Terraform provider binaries, e.g.:
+# .terraform/
+# *.tfstate
+# *.tfstate.*
+#
+# If large provider binaries were already committed, remove them from git
+# history/tracking before pushing, for example:
+#   git rm -r --cached .terraform
+#   git commit -m "Remove .terraform directory from version control"
+
+.terraform/
+*.tfstate
+*.tfstate.*
